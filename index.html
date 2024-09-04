@@ -28,8 +28,15 @@
             color: white !important;
         }
 
+        .full-height {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .hero {
-            background: linear-gradient(rgba(26, 76, 126, 0.8), rgba(26, 76, 126, 0.8)), url('/api/placeholder/1200/400');
+            background: linear-gradient(rgba(26, 76, 126, 0.8), rgba(26, 76, 126, 0.8)), url('/api/placeholder/1200/800');
             background-size: cover;
             background-position: center;
             color: white;
@@ -51,6 +58,7 @@
 
         .card {
             border-color: var(--light-blue);
+            height: 100%;
         }
 
         .card-title {
@@ -86,10 +94,32 @@
             border-radius: 50%;
             margin: 0 auto;
         }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Pillar Capital Partners</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -99,26 +129,32 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#target-market">Target Market</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero py-5">
-        <div class="container text-center py-5">
+    <header id="home" class="hero full-height">
+        <div class="container text-center">
             <h1 class="display-4">Navigate Your M&A Journey with Confidence</h1>
             <p class="lead">Expert guidance for successful mergers and acquisitions worldwide</p>
             <a href="#services" class="btn btn-primary btn-lg">Explore Our Services</a>
         </div>
+        <a href="#services" class="scroll-down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+        </a>
     </header>
 
-    <section id="services" class="py-5">
+    <section id="services" class="full-height py-5">
         <div class="container">
             <h2 class="text-center mb-5">Our Services</h2>
-            <div class="row">
+            <div class="row h-75 align-items-center">
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">M&A Advisory Services</h5>
                             <p class="card-text">Comprehensive guidance throughout the entire M&A process, from initial planning to deal closure.</p>
@@ -126,7 +162,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Deal Sourcing and Due Diligence</h5>
                             <p class="card-text">Identifying potential targets and conducting thorough analysis to ensure informed decision-making.</p>
@@ -134,7 +170,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Valuation Services</h5>
                             <p class="card-text">Accurate and objective company valuations to support negotiations and transactions.</p>
@@ -145,10 +181,10 @@
         </div>
     </section>
 
-    <section id="about" class="py-5">
+    <section id="about" class="full-height py-5">
         <div class="container">
             <h2 class="text-center mb-5">About Pillar Capital Partners</h2>
-            <div class="row">
+            <div class="row h-75 align-items-center">
                 <div class="col-lg-6">
                     <p>Pillar Capital Partners is a remotely operated boutique consulting firm specializing in mergers and acquisitions (M&A). Our mission is to provide high-value advisory services to private equity firms, corporations, and business owners globally.</p>
                 </div>
@@ -159,10 +195,58 @@
         </div>
     </section>
 
-    <section id="target-market" class="py-5">
+    <section id="team" class="full-height py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Team</h2>
+            <div class="row h-75 align-items-center">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card team-member-card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/150/150" alt="Zack Fava" class="team-member-img mb-3">
+                            <h5 class="card-title">Zack Fava</h5>
+                            <p class="card-text mb-1">Co-Founder</p>
+                            <p class="card-text text-muted">M&A Strategy, Deal Sourcing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card team-member-card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/150/150" alt="Anthony Minor" class="team-member-img mb-3">
+                            <h5 class="card-title">Anthony Minor</h5>
+                            <p class="card-text mb-1">Co-Founder</p>
+                            <p class="card-text text-muted">Due Diligence, Valuation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card team-member-card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/150/150" alt="Jane Doe" class="team-member-img mb-3">
+                            <h5 class="card-title">Jane Doe</h5>
+                            <p class="card-text mb-1">Senior Advisor</p>
+                            <p class="card-text text-muted">Post-Merger Integration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card team-member-card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/150/150" alt="John Smith" class="team-member-img mb-3">
+                            <h5 class="card-title">John Smith</h5>
+                            <p class="card-text mb-1">Financial Analyst</p>
+                            <p class="card-text text-muted">Financial Modeling, Valuation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="target-market" class="full-height py-5">
         <div class="container">
             <h2 class="text-center mb-5">Who We Serve</h2>
-            <div class="row">
+            <div class="row h-75 align-items-center">
                 <div class="col-md-3 mb-4">
                     <div class="card h-100">
                         <div class="card-body text-center">
@@ -188,54 +272,6 @@
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <h5 class="card-title">Startups</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="team" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Our Team</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card team-member-card h-100">
-                        <div class="card-body text-center">
-                            <img src="/api/placeholder/150/150" alt="Zack Fava" class="team-member-img mb-3">
-                            <h5 class="card-title">Zack Fava</h5>
-                            <p class="card-text mb-1">Co-Founder</p>
-                            <p class="card-text text-muted">M&A Strategy, Deal Sourcing</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card team-member-card h-100">
-                        <div class="card-body text-center">
-                            <img src="/api/placeholder/150/150" alt="Anthony Minor" class="team-member-img mb-3">
-                            <h5 class="card-title">Anthony Minor</h5>
-                            <p class="card-text mb-1">Co-Founder</p>
-                            <p class="card-text text-muted">Due Diligence, Valuation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card team-member-card h-100">
-                        <div class="card-body text-center">
-                            <img src="/api/placeholder/150/150" alt="Jane Doe" class="team-member-img mb-3">
-                            <h5 class="card-title">Jane Doe</h5>
-                            <p class="card-text mb-1">Senior Advisor</p>
-                            <p class="card-text text-muted">Post-Merger Integration</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card team-member-card h-100">
-                        <div class="card-body text-center">
-                            <img src="/api/placeholder/150/150" alt="John Smith" class="team-member-img mb-3">
-                            <h5 class="card-title">John Smith</h5>
-                            <p class="card-text mb-1">Financial Analyst</p>
-                            <p class="card-text text-muted">Financial Modeling, Valuation</p>
                         </div>
                     </div>
                 </div>
